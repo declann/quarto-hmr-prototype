@@ -1,0 +1,14 @@
+---
+title: "Quarto Issue 5661 demo"
+format:
+  html:
+    code-fold: true
+    resources:
+    - ./resources/umd.js
+---
+
+```{ojs}
+umd = require('./resources/umd.js')
+
+umd
+```
