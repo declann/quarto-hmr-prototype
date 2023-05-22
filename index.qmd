@@ -1,5 +1,5 @@
 ---
-title: "Quarto Issue 5661 demo"
+title: "Quarto HMR Prototype"
 format:
   html:
     code-fold: true
@@ -10,5 +10,5 @@ format:
 ```{ojs}
 umd = require('./resources/umd.js')
 
-umd
+umd.ans
 ```

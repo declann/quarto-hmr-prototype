@@ -20,4 +20,6 @@
     }
     // expose log to other modules
     exports.log = log;
+
+    exports.ans = 43;
   });
