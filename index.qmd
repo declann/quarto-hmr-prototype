@@ -3,8 +3,8 @@ title: "Quarto HMR Prototype"
 format:
   html:
     code-fold: true
-    resources:
-    - ./resources/umd.js
+    #resources:
+    #- ./resources/umd.js
 ---
 
 ```{ojs}
@@ -15,6 +15,14 @@ umd.ans
 ans = umd.ans
 
 ans
+
+umd2.ans
 ```
 
-Do `window._ojs.ojsConnector.mainModule.redefine("ans", 15)` to overwrite `ans`.
+# some progress on hot resource replacement `preview`
+
+- Do `window._ojs.ojsConnector.mainModule.redefine("ans", 15)` to overwrite `ans`.
+
+`umd2` is not defined: it's a placeholder:
+
+ - Do `await window._ojs.runtime.interpret("umd2 = require('./resources/umd.js?v=4')\n\numd.ans\n\n", "ojs-cell-1-1", false)` after editing `resources/umd.js`, this sets the updated value without losing state (note: this isn't configured as a resource, or else it would trigger a full refresh. Really I want to replace that refresh mechanism - TODO (*I really want to conditionally replace.. but this means server work also & isn't necessary for my strict needs)*)
