@@ -11,4 +11,10 @@ format:
 umd = require('./resources/umd.js')
 
 umd.ans
+
+ans = umd.ans
+
+ans
 ```
+
+Do `window._ojs.ojsConnector.mainModule.redefine("ans", 15)` to overwrite `ans`.
